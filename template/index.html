@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<div class="container py-4">
+    <header class="pb-3 mb-4 border-bottom">
+        <h3>Klasifikasi Abstrak Bahasa Indonesia Menggunakan Pretrained Model BERT dan ANN</h3>
+    </header>
+    <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">Tentang Klasifikasi Abstrak</h1>
+          <p class="col-md-8 fs-6">Sistem ini digunakan untuk mengklasifikasikan sebuah abstrak yang ada pada artikel ilmiah dalam bahasa Indonesia agar dapat diketahui sebuah artikel ilmiah dapat dikategorikan ke dalam bidang ilmu tertentu serta mengetahui seberapa besar keterkaitan suatu artikel ilmiah dengan bidang keilmuan lainnya berdasarkan abstrak. Model yang digunakan pada sistem ini sudah dilatih menggunakan dataset sebanyak 9000 abstrak dengan kombinasi BERT dan Artificial Neural Network</p>
+          <a class="btn btn-primary btn-lg" href="/predict" role="button">Coba Klasifikasi Abstrak</a>
+        </div>
+      </div>
+</div>
+{% endblock %}

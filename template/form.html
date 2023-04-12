@@ -1,0 +1,24 @@
+<!-- <form action="/predictme/" method = "POST">
+    <p>Abstrack <input type = "textarea" name="abstrack" /></p>
+    <p><input type = "submit" value = "submit" /></p>
+</form> -->
+{% extends "base.html" %}
+{% block title %}Input Abstrak{% endblock %}
+{% block content %}
+<div class="container p-3 mb-4 mt-4 bg-body-tertiary rounded-3">
+    <h3 class="border-bottom">Classification Abstracts of Scientific Articles</h3>
+    <div class="container-fluid py-3">
+        <h6>Input the abstract that you want to classify</h6>
+        <form action="/predictme/" method = "POST">
+            <div class="mb-3">
+                <textarea class="form-control" name="abstrack" rows="6" oninvalid="this.setCustomValidity('Abstrak tidak boleh kosong!')"
+                oninput="setCustomValidity('')" required></textarea>
+            </div>
+            <button type="submit" value = "submit" class="btn btn-primary mb-3">Do Abstract Classification
+            </button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

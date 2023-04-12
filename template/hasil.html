@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}Input Abstrak{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+      <div class="col mt-3 mb-3">
+        <h4 class="border-bottom">Abstract Classification Results</h4>
+      </div>
+    </div>
+
+    <div class="card">
+        <h6 class="card-header">Abstract</h6>
+        <div class="card-body">
+            <p class="card-text" style="font-size: 14px;">{{abstraknya}}</p>
+            <p class="card-text mb-1 fw-bold" style="font-size: 14px;">English Translation:</p>
+            <p class="card-text" style="font-size: 14px;">Ganyong is one of the food plants that have high nutritional content. The purpose of this study was to determine how to make bioethanol from ganyong tubers using the Solid State Fermentation (SSF) method and determine the price of the Michaelis Menten constant in making bioethanol from ganyong tubers at various pHs with the SSF method. Ganyong tubers are washed with water, peeled, and grated. The results of the grater are squeezed and heated in a pot with a temperature of 100oC for ± 30 minutes. The ganyong tuber slurry was cooled to continue the fermentation process. Ganyong tuber pulp was taken as much as 250 mL, then added Saccharomyces cerevisiae as much as 10 g, NPK as much as 5 g, urea as much as 5 g, and starter volume as much as 200 mL. The tuber slurry was put into a fermentation vessel and covered to prevent direct contact with air. Samples were analyzed at pH 4, 4.5, and 5 with fermentation time for 0, 3, 5, 7, 9, 11, 13, 15, and 17 days. Based on the results of the study, the water content, crude fiber, and starch contained in ganyong tubers were 10.10%, 40.17%, and 0.35%, respectively. The highest glucose content in this study was at fermentation time 0 days with pH 5 of 8.2%. While the highest bioethanol content was 46.08% at pH 4 with a fermentation time of 17 days. The most suitable fermentation reaction kinetics model is Lineweaver and Burk at pH 5 with Km of 94.26 g/L.day and Vmax of 30.66 g/L with R2 of 0.98.</p>
+        </div>
+    </div>
+
+    <div class="alert alert-info p-3 mt-3" role="alert">
+        <h6 class="alert-heading">Label Description</h6>
+        <hr>
+        <p class="mb-0">Business: 0; Law: 1; Health: 2; Computer: 3; Communication: 4; Mathematics: 5; Education: 6; Agriculture: 7; Engineering: 8</p>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Two Highest Probability Results:</h5>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Label</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Probability</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for hasil in hasil_predict %}
+                      <tr>
+                        <td>{{hasil[0]}}</td>
+                        <td>{{hasil[2]}}</td>
+                        <td>{{hasil[1]}}</td>
+                      </tr>
+                    {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title">Abstract prediction results are more dominant to:</h5>
+                  <div class="alert alert-success fw-bold" style="width: 250px; margin: auto;" role="alert">
+                    {{dominan}} 
+                    <p class="mb-0">{{nilai_probabilitas}}</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<!-- <p>Abstrak</p>
+<p>{{abstraknya}}</p>
+
+<table>
+    <tr>
+      <th>Label Category</th>
+      <th>Probability Prediction</th>
+    </tr>
+    {% for hasil in hasil_predict %}
+    <tr>
+        <td>{{hasil[0]}}</td>
+        <td>{{hasil[1]}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+<h1>Hasil probabilitas dari abstrak artikel tersebut lebih dominan ke {{dominan}}</h1> -->
